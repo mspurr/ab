@@ -1,26 +1,29 @@
-<p id="notice"><%= notice %></p>
+<% if user_signed_in? %>
+  <h1>Dokumenter</h1>
 
-<h1>Dokumenter</h1>
+  <table>
+    <% @documents.each do |document| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td class="list_description">
+          <dl>
+            <dt><%= document.title %></dt>
+            <dd><%= truncate(document.description, length: 160) %></dd>
+          </dl>
+        </td>
+        <td class="list_name"><%= document.name %></td>
+        <td class="list_actions">
+          <%= link_to 'Vis', document %>
+          <%= link_to 'Rediger', edit_document_path(document) %>
+          <%= link_to 'Slet', document, method: :delete, data: { confirm: 'Er du sikker?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 
-<table>
-  <% @documents.each do |document| %>
-    <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-      <td class="list_description">
-        <dl>
-          <dt><%= document.title %></dt>
-          <dd><%= truncate(document.description, length: 80) %><dd>
-        <dl>
-      </td>
-      <td class="list_name"><%= document.name %></td>
-      <td class="list_actions">
-        <%= link_to 'Vis', document %>
-        <%= link_to 'Rediger', edit_document_path(document) %>
-        <%= link_to 'Slet', document, method: :delete, data: { confirm: 'Er du sikker?' } %>
-      </td>
-    </tr>
-  <% end %>
-</table>
+  <br>
 
-<br>
+  <%= link_to 'Nyt dokument', new_document_path, {class: "default-btn1"} %>
 
-<%= link_to 'Nyt dokument', new_document_path, {class: "default-btn1"} %>
+<% else %>
+  <%= render 'documents/landing' %>
+<% end %>

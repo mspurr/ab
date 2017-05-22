@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>App</title>
+    <title>Aftalebanken</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -10,36 +10,53 @@
   </head>
 
   <body class="<%= controller.controller_name %>">
-    <div class="container">
-      <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
+    <nav class="navbar navbar-toggleable-md navbar-light fixed-top bg-faded">
+      <div class="container">
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag("logo1", class: "nav-logo") %>
           <span>Aftale</span>banken
         <% end %>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+            <li class="nav-item nav-a">
               <%= link_to "Hjem", root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item">
-              <%= link_to "Log ind", new_user_session_path, class: "default-btn2 dark nav-link" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Kom Igang", new_user_registration_path, class: "default-btn2 nav-link" %>
-            </li>
+            <% if user_signed_in? %>
+              <li class="nav-item nav-a">
+                <%= link_to "Min konto", edit_user_registration_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item nav-a">
+                <%= link_to "Log ud", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Log ind", new_user_session_path, class: "default-btn2 dark nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Kom igang", new_user_registration_path, class: "default-btn2 nav-link" %>
+              </li>
+            <% end %>
           </ul>
         </div>
-      </nav>
-    </div>
-  	<div class="container">
-      <div class="alert alert-info"><%= notice %></div>
-      <div class="alert alert-warning"><%= alert %></div>
-    	<div class="wrapper">
-        <%= yield %>
       </div>
+    </nav>
+  	<div class="container">
+      <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
+      <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
     </div>
+    
+    <% if user_signed_in? %>
+      <div class="container">
+        <div class="wrapper">
+          <%= yield %>
+        </div>
+      </div>
+    <% else %>
+      <%= yield %>
+    <% end %>
     <footer class="footer">
       <div class="container">
         © 2017 - AftaleBanken, All Rights Reserved
