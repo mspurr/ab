@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_self
+ *= require documents
+ */
+@import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700');
+$dark: #274c5e;
+$blue2: #6f8c9c;
+$blue1: #368bd4;
+$gray: #797979;
+
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	line-height: 1;
+	padding-top: 60px;
+	color: $dark;
+}
+.dark {
+	background-color: $blue2 !important;
+	border: 1px solid #5e717b !important;
+}
+.nav-item {
+	padding: 0 0 0 15px;
+}
+.nav-link {
+	transition: 0.15s;
+	color: $gray !important;
+	padding: 0.3em;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+.navbar {
+	font-size: 0.9em;
+	border-bottom: 1px solid rgba(193, 193, 193, 0.3);
+	background-color: rgba(255, 255, 255, 0.92);
+	box-shadow: 0px 0px 2px rgba(204, 204, 204, 0.68);
+	width: 930px;
+  max-width: 100%;
+	right: inherit;
+	left: inherit;
+	padding: 7px 15px;
+  width: 930px;
+  max-width: 100%;
+  right: inherit;
+  left: inherit;
+  border-top: 2px solid #368bd4;
+  .navbar-brand {
+  	color: $blue1;
+  	font-size: 1.1em;
+  	span {
+  		font-weight: 700;
+  	}
+  }
+}
+.default-btn1 {
+	padding: 15px;
+	background-color: $blue1;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-decoration: none;
+}
+.default-btn2 {
+	border: 1px solid #3b64a0;
+	background-color: $blue1;
+	color: #FFFFFF !important;
+	font-weight: 600;
+	padding-left: .9rem !important;
+	padding-right: .9rem !important;
+}
+footer {
+  width: 100%;
+  padding: 20px 0;
+  background-color: #368bd4;
+  border-top: 1px solid #3b64a0;
+  color: #FFFFFF;
+}
+.wrapper {
+	margin: 20px 0 60px;
+}
