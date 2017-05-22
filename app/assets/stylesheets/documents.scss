@@ -2,6 +2,10 @@ $dark: #274c5e;
 $blue2: #6f8c9c;
 $blue1: #1c75bc;
 $gray: #797979;
+$yellow: #ffbd02;
+$black: #4a4a4a;
+$white: #f7f7f7;
+$dark2: #10558c;
 
 .documents {
 	table {
@@ -58,9 +62,10 @@ $gray: #797979;
 	margin: 0 auto;
 	overflow: auto;
 	width: 100%;
-	background-image: url(banner-background.jpg);
+	background: #2c93d0 radial-gradient(circle at center, #2eb8ec 0, #1c75bc 30%, #205698 70%);
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 300vw 300vh;
+	background-position: -100vw -120vh;
 }
 .hero {
 	flex-direction: column;
@@ -72,21 +77,20 @@ $gray: #797979;
   align-items: center;
   justify-content: center;
   h1 {
-    width: 400px;
-    float: left;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 3em;
-    color: $blue1;
+    color: #FFFFFF;
+    text-align: center;
   }
 }
 .blue_bg {
 	/* background-color: $blue1; */
-	background: linear-gradient(141deg, #1c75bc 0%, #2c93d0 75%);
+	background-color: $white;
 	border-top: 1px solid #1b6eb1;
   position: relative;
   h1 {
-  	color: #FCFCFC;
-    text-shadow: 0px 1px 1px rgba(72, 72, 72, 0.47);
+  	color: $dark;
+  	font-weight: 300;
   }
 }
 .hero_smaller {
@@ -98,5 +102,7 @@ $gray: #797979;
     h1 {
     	width: auto !important;
     	margin-bottom: 40px;
+    	text-align: left;
+    	color: $dark2;
     }
 }

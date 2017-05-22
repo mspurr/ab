@@ -19,6 +19,12 @@ $dark: #274c5e;
 $blue2: #6f8c9c;
 $blue1: #1c75bc;
 $gray: #797979;
+$yellow: #ffbd02;
+$black: #4a4a4a;
+$white: #f7f7f7;
+$dark2: #10558c;
+
+
 
 body {
 	font-family: 'Source Sans Pro', sans-serif;
@@ -29,8 +35,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: 300;
 }
 .dark {
-	background-color: $blue2 !important;
-	border: 1px solid #5e717b !important;
+	background-color: $yellow !important;
+	border: 1px solid #d4ab36 !important;
 }
 .nav-item {
 	margin-left: 15px;
@@ -117,7 +123,11 @@ footer {
 	margin: 80px 0 60px;
 }
 .p-info {
-	color: #ffffff;
+	color: $black;
   margin-top: 35px;
   opacity: 0.8;
+}
+.header-wrap {
+	width: 70%;
+	margin: 0 auto;
 }
