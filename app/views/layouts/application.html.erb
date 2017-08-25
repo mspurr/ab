@@ -55,11 +55,9 @@
         </div>
       </div>
     </nav>
-  	<div class="container">
+    <section class="default-section">
       <% if notice %><div class="alert alert-info"><%= notice %></div><% end %>
       <% if alert %><div class="alert alert-warning"><%= alert %></div><% end %>
-    </div>
-    
     <% if user_signed_in? %>
       <div class="container">
         <div class="wrapper">
@@ -69,10 +67,12 @@
     <% else %>
       <%= yield %>
     <% end %>
+    </section>
     <footer class="footer">
-      <div class="container">
-        © 2017 - AftaleBanken, All Rights Reserved
-      </div>
+        <div class="f-logo"></div>
+        <div class="info-box">
+         © 2017 - AftaleBanken, All Rights Reserved
+        </div>
     </footer>
   </body>
 </html>

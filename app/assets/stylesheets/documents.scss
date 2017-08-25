@@ -62,12 +62,14 @@ $dark2: #10558c;
 	margin: 0 auto;
 	overflow: auto;
 	width: 100%;
-	background: #2c93d0 radial-gradient(circle at center, #2eb8ec 0, #1c75bc 30%, #205698 70%);
-	background-repeat: no-repeat;
-	background-size: 300vw 300vh;
-	background-position: -100vw -120vh;
-	h1 {
-		text-shadow: 0px 1px 1px rgba(21, 101, 165, 0.73)
+  background: url("wall2");
+	//background: #2c93d0 radial-gradient(circle at center, #2eb8ec 0, #1c75bc 30%, #205698 70%);
+  background-repeat: no-repeat;
+  background-size: 120%;
+  background-position: -18vw -24vw;
+  -webkit-filter: grayscale(10%);
+  filter: grayscale(10%);
+  h1 {
 	}
 }
 .hero {
@@ -80,9 +82,9 @@ $dark2: #10558c;
   align-items: center;
   justify-content: center;
   h1 {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 3em;
-    color: #FFFFFF;
+    color: $dark2;
     text-align: center;
   }
 }
@@ -101,10 +103,13 @@ $dark2: #10558c;
 }
 .hero_smaller {
 	min-height: 26em;
+  padding-bottom: 100px;
 }
 .title_button_wrap {
-    width: 400px;
-    margin-top: 60px;
+    margin-top: 100px;
+    background-color: #fbfbfb;
+    border: 1px solid #eaeaea;
+    padding: 40px;
     h1 {
     	width: auto !important;
     	margin-bottom: 40px;
@@ -115,19 +120,19 @@ $dark2: #10558c;
 .p-header {
   margin-top: 40px;
   font-size: 1.4em;
-  color: #FFFFFF;
+  color: $dark2;
   line-height: 1.7em;
   text-align: center;
-  text-shadow: 0px 1px 1px rgba(21, 101, 165, 0.73);
   margin-bottom: 40px;
+  font-weight: 200;
 }
 .child-header {
 	width: 500px;
 	margin: 0 auto;
 	text-align: center;
 	.p-info {
-		color: #FFFFFF;
+		color: $dark2;
 		opacity: 1.0;
-		text-shadow: 0px 1px 1px rgba(21, 101, 165, 0.73);
+    font-weight: 600;
 	}
 }
