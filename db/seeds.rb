@@ -1,5 +1,5 @@
 Document.delete_all
-for i in 1..16 do
+for i in 1..2 do
 	Document.create(title: "Test kontrakt #{i}",
 	description: 'Her skal vaere en beskrivelse af dokumentet. Det kan vaere en kort beskrivelse af kontraktens formaal.',
 	name: 'Peter Hansen')

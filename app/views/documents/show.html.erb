@@ -1,17 +1,95 @@
-<p>
-  <strong>Title:</strong>
+<div class="document">
+<h1>
   <%= @document.title %>
-</p>
+</h1><br/>
 
 <p>
-  <strong>Description:</strong>
-  <%= @document.description %>
+<strong><%= @document.name %></strong>
 </p>
-
 <p>
-  <strong>Name:</strong>
-  <%= @document.name %>
-</p>
+  (<%= @document.companyname %>)
+</p><br/>
+<hr>
+<br/>
+<ol>
+  <li><strong>Stifter og stiftelsesdato</strong><br/><br/>
+  <ol>
+    <li> Selskabet stiftes i dag af <%= @document.name %>, <%= @document.adress %>.</li><br/>
+    <li> Der skal ikke tilkomme stifteren eller andre særlige rettigheder eller fordele,
+ligesom der ikke indgås aftale med stifteren eller andre, der kan påføre
+Selskabet en væsentlig økonomisk forpligtelse, jf. selskabslovens § 27, stk.
+1, nr. 1 og 2.</li>
+  </ol>
+  </li>
+  <br/>
+
+  <li><strong>Vedtægter</strong><br/><br/>
+    <ol>
+      <li>Selskabet stiftes med de som <strong>bilag 1</strong> vedhæftede vedtægter, der udgør en
+        integreret del af stiftelsesdokumentet.</li><br/>
+    </ol>
+  </li>
+  <li><strong>Selskabskapital og tegning af kapitalandele</strong><br/><br/>
+    <ol>
+      <li>Selskabskapitalen udgør nom. kr. <%= @document.capital %> og er fordelt på kapitalandele á
+        nominelt kr. 1 og multipla heraf. </li><br/>
+      <li>Selskabskapitalen er indbetalt kontant på en bankkonto oprettet af
+        Selskabet.</li><br/>
+      <li>Kapitalandelene tegnes af stifteren til kurs 100 ved påtegning på
+        stiftelsesdokumentet. </li>
+    </ol>
+  </li>
+  <br/>
+  <br/>
+
+  <li><strong>Ledelse mv.</strong><br/><br/>
+    <ol>
+      <li>Selskabet stiftes uden bestyrelse, idet Selskabet skal ledes af en direktør.
+        Som direktør udnævnes <%= @document.name %>. </li><br/>
+      <li>Selskabet har i overensstemmelse med årsregnskabslovens
+        § 135 fravalgt revision.</li><br/>
+      <li>Selskabets adresse er ved stiftelsen <%= @document.companyadress %>.</li>
+    </ol>
+  </li>
+  <br/>
+  <br/>
+
+  <li><strong>Stiftelsesdokumenter og omkostninger</strong><br/><br/>
+    <ol>
+      <li>Dette stiftelsesdokument er vedhæftet følgende bilag, der indgår som
+        integrerede dokumenter i stiftelsesdokumentet: <br/><br/> Bilag 1: Vedtægter for <%= @document.name %> </li><br/>
+      <li>Selskabet afholder stiftelsesomkostningerne, der vil udgøre <%= @document.costs %> kr., excl.
+moms og registreringsgebyr i henhold til Erhvervsstyrelsens gældende
+takster.</li><br/>
+    </ol>
+  </li>
+  <br/>
+  <br/>
+
+  <li><strong>Stifterens tiltrædelse</strong><br/><br/>
+    <ol>
+      <li>Undertegnede stifter bekræfter ved sin underskrift stiftelsen af Selskabet på
+de i stiftelsesdokumenterne fastsatte vilkår og erklærer sig bekendt med, at
+der består hæftelse for den, som på Selskabets vegne har indgået en
+forpligtelse eller har et medansvar herfor, hvis Selskabet ikke registreres og
+stiftelsen derved bortfalder. </li><br/>
+    </ol>
+  </li>
+
+</ol>
+<br/>
+<br/>
+<p>
+  <%= @document.location %>, den <%= @document.created_at.strftime("%d %B %Y") %>
+</p><br/>
+<p>
+Som stifter og tegner af nominelt kr. <%= @document.capital %> på ovenstående vilkår</p><br/>
+
+<p><u>Underskriv digitalt med NemID</u></p>
+<p><%= @document.name %></p>
+
+</div>
 
 <%= link_to 'Rediger', edit_document_path(@document) %> |
 <%= link_to 'Tilbage', documents_path %>
+
